@@ -1,0 +1,463 @@
+@-webkit-keyframes slidein {
+  0% {
+    top: -400px;
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    top: 0px;
+  }
+}
+@keyframes slidein {
+  0% {
+    top: -400px;
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    top: 0px;
+  }
+}
+@-webkit-keyframes slideout {
+  0% {
+    top: 0;
+    opacity: 1;
+  }
+  100% {
+    top: -400px;
+    opacity: 0;
+  }
+}
+@keyframes slideout {
+  0% {
+    top: 0;
+    opacity: 1;
+  }
+  100% {
+    top: -400px;
+    opacity: 0;
+  }
+}
+body {
+  background: #eee;
+  font-family: "Tahoma";
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+body #scene {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  overflow: hidden;
+}
+body #scene #left-zone {
+  background: #fff;
+  height: 75%;
+  flex-grow: 0;
+  display: flex;
+  width: 350px;
+  align-items: center;
+  justify-content: left;
+}
+body #scene #left-zone .list {
+  display: flex;
+  list-style: none;
+  align-content: stretch;
+  flex-direction: column;
+  flex-grow: 1;
+  margin: 0;
+  padding: 0;
+}
+body #scene #left-zone .list li.item input[type="radio"] {
+  display: none!important;
+}
+body #scene #left-zone .list li.item input[type="radio"] ~ label {
+  display: block;
+  opacity: 0.5;
+  height: 25px;
+  text-align: center;
+  line-height: 25px;
+}
+body #scene #left-zone .list li.item input[type="radio"] ~ label:first-letter {
+  text-transform: uppercase;
+}
+body #scene #left-zone .list li.item input[type="radio"] ~ label:hover {
+  opacity: 0.75;
+  cursor: pointer;
+}
+body #scene #left-zone .list li.item input[type="radio"] ~ .content {
+  position: absolute;
+  left: 350px;
+  top: -400px;
+  width: 650px;
+  height: 400px;
+  -webkit-animation-duration: 0.75s;
+          animation-duration: 0.75s;
+  -webkit-animation-name: slideout;
+          animation-name: slideout;
+  -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+body #scene #left-zone .list li.item input[type="radio"] ~ .content h1:first-letter {
+  text-transform: uppercase;
+}
+body #scene #left-zone .list li.item input[type="radio"] ~ .content p {
+  max-width: 50%;
+  text-align: center;
+}
+body #scene #left-zone .list li.item input[type="radio"]:checked ~ label {
+  opacity: 1;
+  -webkit-animation: all 1s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+          animation: all 1s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+body #scene #left-zone .list li.item input[type="radio"] ~ label.label_Austria:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  margin-left: 15px;
+  background-image: url("IMG/aut_flag.png");
+  background-position: center;
+  background-size: 75% 75%;
+  background-repeat: no-repeat;
+}
+body #scene #left-zone .list li.item input[type="radio"] ~ .content.content_Austria h1 {
+  color: #D64541;
+}
+body #scene #left-zone .list li.item input[type="radio"]:checked ~ label.label_Austria {
+  color: #D64541;
+  border-right: solid 4px #D64541;
+}
+body #scene #left-zone .list li.item input[type="radio"] ~ label.label_Belgium:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  margin-left: 15px;
+  background-image: url("IMG/bel_flag.png");
+  background-position: center;
+  background-size: 75% 75%;
+  background-repeat: no-repeat;
+}
+body #scene #left-zone .list li.item input[type="radio"] ~ .content.content_Belgium h1 {
+  color: #f8e041;
+}
+body #scene #left-zone .list li.item input[type="radio"]:checked ~ label.label_Belgium {
+  color: #f8e041;
+  border-right: solid 4px #f8e041;
+}
+body #scene #left-zone .list li.item input[type="radio"] ~ label.label_Brazil:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  margin-left: 15px;
+  background-image: url("IMG/bra_flag.png");
+  background-position: center;
+  background-size: 75% 75%;
+  background-repeat: no-repeat;
+}
+body #scene #left-zone .list li.item input[type="radio"] ~ .content.content_Brazil h1 {
+  color: #4a9d39;
+}
+body #scene #left-zone .list li.item input[type="radio"]:checked ~ label.label_Brazil {
+  color: #4a9d39;
+  border-right: solid 4px #4a9d39;
+}
+body #scene #left-zone .list li.item input[type="radio"] ~ label.label_Chile:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  margin-left: 15px;
+  background-image: url("IMG/chl_flag.png");
+  background-position: center;
+  background-size: 75% 75%;
+  background-repeat: no-repeat;
+}
+body #scene #left-zone .list li.item input[type="radio"] ~ .content.content_Chile h1 {
+  color: #1e38a5;
+}
+body #scene #left-zone .list li.item input[type="radio"]:checked ~ label.label_Chile {
+  color: #1e38a5;
+  border-right: solid 4px #1e38a5;
+}
+body #scene #left-zone .list li.item input[type="radio"] ~ label.label_Colombia:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  margin-left: 15px;
+  background-image: url("IMG/col_flag.png");
+  background-position: center;
+  background-size: 75% 75%;
+  background-repeat: no-repeat;
+}
+body #scene #left-zone .list li.item input[type="radio"] ~ .content.content_Colombia h1 {
+  color: #f5d111;
+}
+body #scene #left-zone .list li.item input[type="radio"]:checked ~ label.label_Colombia {
+  color: #f5d111;
+  border-right: solid 4px #f5d111;
+}
+body #scene #left-zone .list li.item input[type="radio"] ~ label.label_Costa_Rica:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  margin-left: 15px;
+  background-image: url("IMG/cri_flag.png");
+  background-position: center;
+  background-size: 75% 75%;
+  background-repeat: no-repeat;
+}
+body #scene #left-zone .list li.item input[type="radio"] ~ .content.content_Costa_Rica h1 {
+  color: #162b7f;
+}
+body #scene #left-zone .list li.item input[type="radio"]:checked ~ label.label_Costa_Rica {
+  color: #162b7f;
+  border-right: solid 4px #162b7f;
+}
+body #scene #left-zone .list li.item input[type="radio"] ~ label.label_Germany:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  margin-left: 15px;
+  background-image: url("IMG/deu_flag.png");
+  background-position: center;
+  background-size: 75% 75%;
+  background-repeat: no-repeat;
+}
+body #scene #left-zone .list li.item input[type="radio"] ~ .content.content_Germany h1 {
+  color: #000000;
+}
+body #scene #left-zone .list li.item input[type="radio"]:checked ~ label.label_Germany {
+  color: #000000;
+  border-right: solid 4px #000000;
+}
+body #scene #left-zone .list li.item input[type="radio"] ~ label.label_Ecuador:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  margin-left: 15px;
+  background-image: url("IMG/ecu_flag.png");
+  background-position: center;
+  background-size: 75% 75%;
+  background-repeat: no-repeat;
+}
+body #scene #left-zone .list li.item input[type="radio"] ~ .content.content_Ecuador h1 {
+  color: #f7db00;
+}
+body #scene #left-zone .list li.item input[type="radio"]:checked ~ label.label_Ecuador {
+  color: #f7db00;
+  border-right: solid 4px #f7db00;
+}
+body #scene #left-zone .list li.item input[type="radio"] ~ label.label_Italy:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  margin-left: 15px;
+  background-image: url("IMG/ita_flag.png");
+  background-position: center;
+  background-size: 75% 75%;
+  background-repeat: no-repeat;
+}
+body #scene #left-zone .list li.item input[type="radio"] ~ .content.content_Italy h1 {
+  color: #202c8f;
+}
+body #scene #left-zone .list li.item input[type="radio"]:checked ~ label.label_Italy {
+  color:#202c8f;
+  border-right: solid 4px #202c8f;
+}
+body #scene #left-zone .list li.item input[type="radio"] ~ label.label_Mexico:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  margin-left: 15px;
+  background-image: url("IMG/mex_flag.png");
+  background-position: center;
+  background-size: 75% 75%;
+  background-repeat: no-repeat;
+}
+body #scene #left-zone .list li.item input[type="radio"] ~ .content.content_Mexico h1 {
+  color: #306847;
+}
+body #scene #left-zone .list li.item input[type="radio"]:checked ~ label.label_Mexico {
+  color:#306847;
+  border-right: solid 4px #306847;
+}
+body #scene #left-zone .list li.item input[type="radio"] ~ label.label_Netherlands:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  margin-left: 15px;
+  background-image: url("IMG/nld_flag.png");
+  background-position: center;
+  background-size: 75% 75%;
+  background-repeat: no-repeat;
+}
+body #scene #left-zone .list li.item input[type="radio"] ~ .content.content_Netherlands h1 {
+  color: #efa51c;
+}
+body #scene #left-zone .list li.item input[type="radio"]:checked ~ label.label_Netherlands {
+  color:#efa51c;
+  border-right: solid 4px #efa51c;
+}
+body #scene #left-zone .list li.item input[type="radio"] ~ label.label_Peru:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  margin-left: 15px;
+  background-image: url("IMG/per_flag.png");
+  background-position: center;
+  background-size: 75% 75%;
+  background-repeat: no-repeat;
+}
+body #scene #left-zone .list li.item input[type="radio"] ~ .content.content_Peru h1 {
+  color: #d92b2a;
+}
+body #scene #left-zone .list li.item input[type="radio"]:checked ~ label.label_Peru {
+  color:#d92b2a;
+  border-right: solid 4px #d92b2a;
+}
+body #scene #left-zone .list li.item input[type="radio"] ~ label.label_Portugal:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  margin-left: 15px;
+  background-image: url("IMG/prt_flag.png");
+  background-position: center;
+  background-size: 75% 75%;
+  background-repeat: no-repeat;
+}
+body #scene #left-zone .list li.item input[type="radio"] ~ .content.content_Portugal h1 {
+  color: #2e6603;
+}
+body #scene #left-zone .list li.item input[type="radio"]:checked ~ label.label_Portugal {
+  color:#2e6603;
+  border-right: solid 4px #2e6603;
+}
+body #scene #left-zone .list li.item input[type="radio"] ~ label.label_Spain:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  margin-left: 15px;
+  background-image: url("IMG/spn_flag.png");
+  background-position: center;
+  background-size: 75% 75%;
+  background-repeat: no-repeat;
+}
+body #scene #left-zone .list li.item input[type="radio"] ~ .content.content_Spain h1 {
+  color: #ecbe0e;
+}
+body #scene #left-zone .list li.item input[type="radio"]:checked ~ label.label_Spain {
+  color:#ecbe0e;
+  border-right: solid 4px #ecbe0e;
+}
+body #scene #left-zone .list li.item input[type="radio"]:checked ~ .content {
+  -webkit-animation-duration: 0.75s;
+          animation-duration: 0.75s;
+  -webkit-animation-name: slidein;
+          animation-name: slidein;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+          animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+          display: block;
+}
+body #scene #middle-border {
+  background-color: #eee;
+  height: 75%;
+  flex-grow: 1;
+  max-width: 2px;
+  z-index: 0;
+}
+body #scene #right-zone {
+  background: #fff;
+  height: 100%;
+  flex-grow: 3;
+}
+/**
+ * Tabs
+ */
+.tabschan {
+  display: flex;
+  flex-wrap: wrap;
+}
+.tabschan label {
+  order: 1; 
+  display: block;
+  margin-right: 0.2rem;
+  cursor: pointer;
+  background: #fff;
+  transition: background ease 0.2s;
+  line-height: normal!important;
+  height: auto!important;
+}
+.tabschan .tabchan {
+  order: 99;
+  flex-grow: 1;
+  width: 100%;
+  display: none;
+  background: #fff;
+}
+.tabschan input[type="radio"] {
+  display: none;
+  opacity: 0;
+}
+.tabschan input[type="radio"]:checked + label {
+  font-weight: bold;
+}
+.tabschan input[type="radio"]:checked + label + .tabchan {
+  display: block;
+}
+
+@media (max-width: 45em) {
+  .tabschan .tabchan,
+  .tabschan label {
+    order: initial;
+  }
+  .tabschan label {
+    width: 100%;
+    margin-right: 0;
+    margin-top: 0.2rem;
+  }
+}
+
